@@ -10,7 +10,8 @@
     "add-one": "node src/script/addOneProduct.js",
     "get-all": "node src/script/getAllProducts.js",
     "count": "node src/script/countProducts.js",
-    "clear": "node src/script/clearProducts.js"
+    "clear": "node src/script/clearProducts.js",
+    "remove": "node src/script/removeRandomProduct.js"
   },
   "keywords": [],
   "author": "Oleksii Ozyrskyi <aozyrskyii@gmail.com>",
