@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "node src/script/generateProducts.js"
+    "generate": "node src/script/generateProducts.js",
+   "add-one":"node src/script/addOneProduct.js"
   },
   "keywords": [],
   "author": "Oleksii Ozyrskyi <aozyrskyii@gmail.com>",
