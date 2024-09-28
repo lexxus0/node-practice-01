@@ -1,16 +1,15 @@
-import * as fs from 'node:fs/promises';
-import { PATH_DB } from '../constants/products.js';
+// import * as fs from 'node:fs/promises';
+// import { PATH_DB } from '../constants/products.js';
 import { createFakeProduct } from '../utils/createFakeproduct.js';
+import { readProducts } from '../utils/readProducts.js';
+import { writeProducts } from '../utils/writeProducts.js';
 
 const addOneProduct = async () => {
-  const readProducts = await fs.readFile(PATH_DB);
-
-  const parsProducts = JSON.parse(readProducts);
+  const products = await readProducts();
+  const parsProducts = JSON.parse(products);
 
   parsProducts.push(createFakeProduct());
 
-  await fs.writeFile(PATH_DB, JSON.stringify(parsProducts), {
-    encoding: 'utf-8',
-  });
+  await writeProducts(parsProducts);
 };
 addOneProduct();
