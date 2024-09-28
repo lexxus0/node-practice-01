@@ -1,12 +1,13 @@
-import * as fs from 'node:fs/promises';
-import { PATH_DB } from '../constants/products.js';
+import { readProducts } from '../utils/readProducts.js';
+import { writeProducts } from '../utils/writeProducts.js';
 
 const removeRandomProduct = async () => {
-  const data = JSON.parse(await fs.readFile(PATH_DB));
+  const products = await readProducts();
+  const data = JSON.parse(products);
   const random = Math.floor(Math.random() * data.length);
   data.splice(random, 1);
 
-  fs.writeFile(PATH_DB, JSON.stringify(data));
+  await writeProducts(data);
 };
 
 removeRandomProduct();
